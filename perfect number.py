@@ -1,9 +1,10 @@
-Number = int(input(" Please Enter any Number: "))
-Sum = 0
-for i in range(1, Number):
-    if(Number % i == 0):
-        Sum = Sum + i
-if (Sum == Number):
-    print(" %d is a Perfect Number" %Number)
-else:
-    print(" %d is not a Perfect Number" %Number)
+lower_range = int(input("Enter lower range: "))
+upper_range = int(input("Enter upper range: "))
+result = []
+for num in range(lower_range, upper_range + 1):
+    sqrt = int(num ** 0.5)
+    if sqrt * sqrt == num:
+        digit_sum = sum(map(int, str(num)))
+        if digit_sum < 10:
+            result.append(num)
+print(result)
